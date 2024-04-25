@@ -1,5 +1,5 @@
-import { handleErrorWithSentry, replayIntegration } from "@sentry/sveltekit";
-import * as Sentry from '@sentry/sveltekit';
+// import { handleErrorWithSentry, replayIntegration } from "@sentry/sveltekit";
+// import * as Sentry from '@sentry/sveltekit';
 
 // Sentry.init({
 //   dsn: 'https://a63e57721efe045140239736daf0d675@o317830.ingest.us.sentry.io/4506382142799872',
@@ -18,4 +18,4 @@ import * as Sentry from '@sentry/sveltekit';
 // });
 
 // If you have a custom error handler, pass it to `handleErrorWithSentry`
-export const handleError = handleErrorWithSentry();
+// export const handleError = handleErrorWithSentry();

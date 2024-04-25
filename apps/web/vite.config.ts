@@ -1,4 +1,3 @@
-import { sentrySvelteKit } from "@sentry/sveltekit";
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
@@ -9,12 +8,7 @@ export default defineConfig({
 	server: {
 		https: false
 	},
-	plugins: [sentrySvelteKit({
-        sourceMapsUploadOptions: {
-            org: "pablof7z",
-            project: "highlighter"
-        }
-    }), sveltekit(), SvelteKitPWA({
+	plugins: [sveltekit(), SvelteKitPWA({
         strategies: 'generateSW',
         manifest: {
             short_name: 'Highlighter',
