@@ -5,7 +5,7 @@ import { NDKPrivateKeySigner, NDKRelay, NDKRelayAuthPolicies, NDKRelaySet, NDKSu
 import createDebug from 'debug';
 import { userFollows, debugMode } from '$stores/session';
 import { defaultRelays } from './const';
-import NDKSigVerificationWorker from "@nostr-dev-kit/ndk/workers/sig-verification?worker";
+// import NDKSigVerificationWorker from "@nostr-dev-kit/ndk/workers/sig-verification?worker";
 
 const debug = createDebug('HL:ndk');
 
@@ -78,10 +78,10 @@ export async function configureFeNDK() {
 	$ndk.cacheAdapter = new NDKCacheAdapterDexie({ dbName: 'HL12' });
 	$ndk.clientName = 'highlighter';
 
-	const sigWorker = import.meta.env.DEV ?
-		new Worker(new URL('@nostr-dev-kit/ndk/workers/sig-verification?worker', import.meta.url), { type: 'module' }) : new NDKSigVerificationWorker();
+	// const sigWorker = import.meta.env.DEV ?
+	// 	new Worker(new URL('@nostr-dev-kit/ndk/workers/sig-verification?worker', import.meta.url), { type: 'module' }) : new NDKSigVerificationWorker();
 
-	$ndk.signatureVerificationWorker = sigWorker;
+	// $ndk.signatureVerificationWorker = sigWorker;
 
 	$ndk.pool.on("notice", (relay: NDKRelay, notice: string) => {
 		debug('Relay notice', relay.url, notice);
